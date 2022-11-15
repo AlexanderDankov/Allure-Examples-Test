@@ -1,8 +1,7 @@
-package com.simbirsoft;
+package com.simbirsoft.tests;
 
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Selenide;
 import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
@@ -13,7 +12,7 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
-public class AllureExamplesTest {
+public class AllureExamplesTest extends TestBase {
 
     @Test
     @AllureId("12892")
