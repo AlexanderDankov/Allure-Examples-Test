@@ -2,6 +2,8 @@ package com.simbirsoft.tests;
 
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
+import com.simbirsoft.allure.Layer;
+import com.simbirsoft.allure.Microservice;
 import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
@@ -12,12 +14,15 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
-public class AllureExamplesTest extends TestBase {
+
+@Layer("web")
+public class AllureExamplesWebTest extends TestBase {
 
     @Test
     @AllureId("12892")
     @DisplayName("Успешный поиск репозитория Allure Examples")
     @Story("Поиск репозитория")
+    @Microservice("Repository")
     @Owner("allure8")
     @Feature("Поиск репозитория")
     void repoSearchTest() {
@@ -39,6 +44,7 @@ public class AllureExamplesTest extends TestBase {
     @AllureId("12894")
     @DisplayName("Поиск задачи №26 в репозитории Allure Examples")
     @Story("Поиск задач")
+    @Microservice("Repository")
     @Owner("allure8")
     @Feature("Поиск репозитория")
     void issueSearchTest() {
@@ -59,6 +65,7 @@ public class AllureExamplesTest extends TestBase {
     @DisplayName("Поиск ветки allure-testops-integration в репозитории Allure Examples")
     @Story("Просмотр веток в репозитории")
     @Owner("allure8")
+    @Microservice("Branches")
     @Feature("Ветки")
     void checkBranchInRepo() {
         step("Открыть репозиторий Allure Examples https://github.com/allure-examples/allure-examples", ()-> {
@@ -77,6 +84,7 @@ public class AllureExamplesTest extends TestBase {
     @AllureId("12896")
     @DisplayName("Поиск открытого пулл-реквеста dotnet - NUnit в репозитории Allure Examples")
     @Story("Просмотр пулл-реквестов репозитория")
+    @Microservice("Branches")
     @Owner("allure8")
     @Feature("Ветки")
     void checkPullRequestInRepo() {
