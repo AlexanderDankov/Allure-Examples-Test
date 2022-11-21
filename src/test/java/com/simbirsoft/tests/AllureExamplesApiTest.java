@@ -3,6 +3,7 @@ package com.simbirsoft.tests;
 import com.simbirsoft.allure.Layer;
 import com.simbirsoft.allure.Microservice;
 import io.qameta.allure.AllureId;
+import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
@@ -15,11 +16,12 @@ import static org.hamcrest.Matchers.is;
 public class AllureExamplesApiTest {
 
     @Test
-    @AllureId("12892")
+    @AllureId("13122")
     @DisplayName("Проверка метода /octocat")
     @Story("Проверка доступности api")
-    @Microservice("Common api")
     @Owner("allure8")
+    @Feature("Проверка доступности api.github")
+    @Microservice("Common api")
     void checkSimpleRequestApiGithub() {
         given()
                 .get("https://api.github.com/octocat")
@@ -29,11 +31,12 @@ public class AllureExamplesApiTest {
     }
 
     @Test
-    @AllureId("12892")
+    @AllureId("13121")
     @DisplayName("Проверка ошибки в методе /octocat при пустом значении токена")
     @Story("Проверка доступности api")
-    @Microservice("Common api")
     @Owner("allure8")
+    @Feature("Проверка доступности api.github")
+    @Microservice("Common api")
     void checkErrorWhenTokenEmpty() {
         given()
                 .header("Authorization", "Bearer")
@@ -43,5 +46,10 @@ public class AllureExamplesApiTest {
                 .log().body()
                 .statusCode(401)
                 .body("message", is("Bad credentials"));
+
+
     }
+
+
+
 }
