@@ -1,5 +1,7 @@
 package com.simbirsoft.tests;
 
+import com.simbirsoft.allure.JiraIssue;
+import com.simbirsoft.allure.JiraIssues;
 import com.simbirsoft.allure.Layer;
 import com.simbirsoft.allure.Microservice;
 import io.qameta.allure.AllureId;
@@ -20,6 +22,7 @@ public class AllureExamplesApiTest {
     @DisplayName("Проверка метода /octocat")
     @Story("Проверка доступности api")
     @Owner("allure8")
+    @JiraIssues({@JiraIssue("AUTO-1444")})
     @Feature("Проверка доступности api.github")
     @Microservice("Common api")
     void checkSimpleRequestApiGithub() {
@@ -35,6 +38,7 @@ public class AllureExamplesApiTest {
     @DisplayName("Проверка ошибки в методе /octocat при пустом значении токена")
     @Story("Проверка доступности api")
     @Owner("allure8")
+    @JiraIssues({@JiraIssue("AUTO-1444")})
     @Feature("Проверка доступности api.github")
     @Microservice("Common api")
     void checkErrorWhenTokenEmpty() {

@@ -2,6 +2,8 @@ package com.simbirsoft.tests;
 
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
+import com.simbirsoft.allure.JiraIssue;
+import com.simbirsoft.allure.JiraIssues;
 import com.simbirsoft.allure.Layer;
 import com.simbirsoft.allure.Microservice;
 import io.qameta.allure.AllureId;
@@ -24,6 +26,7 @@ public class AllureExamplesWebTest extends TestBase {
     @Story("Поиск репозитория")
     @Microservice("Repository")
     @Owner("allure8")
+    @JiraIssues({@JiraIssue("AUTO-1444")})
     @Feature("Поиск репозитория")
     void repoSearchTest() {
         step("Открыть страницу https://github.com/", ()-> {
@@ -46,6 +49,7 @@ public class AllureExamplesWebTest extends TestBase {
     @Story("Поиск задач")
     @Microservice("Repository")
     @Owner("allure8")
+    @JiraIssues({@JiraIssue("AUTO-1444")})
     @Feature("Поиск репозитория")
     void issueSearchTest() {
         step("Открыть репозиторий Allure Examples https://github.com/allure-examples/allure-examples", ()-> {
@@ -65,6 +69,7 @@ public class AllureExamplesWebTest extends TestBase {
     @DisplayName("Поиск ветки allure-testops-integration в репозитории Allure Examples")
     @Story("Просмотр веток в репозитории")
     @Owner("allure8")
+    @JiraIssues({@JiraIssue("AUTO-1444")})
     @Microservice("Branches")
     @Feature("Ветки")
     void checkBranchInRepo() {
@@ -86,6 +91,7 @@ public class AllureExamplesWebTest extends TestBase {
     @Story("Просмотр пулл-реквестов репозитория")
     @Microservice("Branches")
     @Owner("allure8")
+    @JiraIssues({@JiraIssue("AUTO-1444")})
     @Feature("Ветки")
     void checkPullRequestInRepo() {
         step("Открыть репозиторий Allure Examples https://github.com/allure-examples/allure-examples", ()-> {
